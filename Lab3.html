@@ -7,6 +7,7 @@
     <title>Artists</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
     <body>
     <div id="container">
         <div id="directory">
@@ -21,102 +22,9 @@
             <button onclick="addArtist()" id="button2" >Add</button>
         </div>
         <div id="artistList">
-            <!-- <div class="artistInfo">
-                <img class="artistImg" src="https://randomuser.me/api/portraits/med/men/1.jpg">
-                <h3 class="name">Barot Bellingham</h3>
-                <button class="deleteBtn">Delete</button>
-                <h5 class="school">Royal Academy of Painting and Sculpture</h5>
-            </div> -->
-            <!-- <div class="artistInfo">
-                <img class="artistImg" src="https://randomuser.me/api/portraits/med/men/7.jpg">
-                <h3 class="name">Johnathan G. Ferrar II</h3>
-                <h5 class="school">Artist to Watch in 2012</h5>
-            </div>
-            <div class="artistInfo">
-                <img class="artistImg" src="https://randomuser.me/api/portraits/med/women/7.jpg">
-                <h3 class="name">Hillary Hewitt Goldwynn-Post</h3>
-                <h5 class="school">New York University</h5>
-            </div>
-            <div class="artistInfo">
-                <img class="artistImg" src="https://randomuser.me/api/portraits/med/men/9.jpg">
-                <h3 class="name">Hassum Harrod</h3>
-                <h5 class="school">Art College in New Dehli</h5>
-            </div>
-            <div class="artistInfo">
-                <img class="artistImg" src="https://randomuser.me/api/portraits/med/women/8.jpg">
-                <h3 class="name">Jennifer Jerome</h3>
-                <h5 class="school">New Westminster College</h5>
-            </div> -->
 
         </div>
     </div>
     
 </body>
-<script>
-
-
-    function showForm() {
-        if (document.getElementById("inputForm").style.display == "none"){
-            document.getElementById("inputForm").style.display = "grid"
-        }
-        else {
-            document.getElementById("inputForm").style.display = "none";
-        }
-    }
-
-    function addArtist() {
-        let artistName = document.getElementById("name").value;
-        let artistInfo = document.getElementById("info").value;
-        let artistImg = document.getElementById("img").value;
-
-        var mainDiv = document.createElement("div");
-        mainDiv.setAttribute("class", "artistInfo");
-
-        var image = document.createElement("img");
-        image.setAttribute("src", artistImg);
-        image.setAttribute("class", "artistImg");
-
-        var name = document.createElement("H3");
-        name.setAttribute("class", "name");
-        name.innerHTML = artistName;
-
-        var info = document.createElement("H5");
-        info.setAttribute("class", "school");
-        info.innerHTML = artistInfo;
-
-        var deleteBtn = document.createElement("button");
-        deleteBtn.setAttribute("class", "deleteBtn");
-        deleteBtn.setAttribute("id", "1");
-        deleteBtn.setAttribute("onClick", "deleteArtist(this.id)")
-        deleteBtn.innerHTML = "Delete";
-
-
-
-        mainDiv.appendChild(image);
-        mainDiv.appendChild(name);
-        mainDiv.appendChild(deleteBtn);
-        mainDiv.appendChild(info);
-
-        var parentDiv = document.getElementById("artistList")
-
-        parentDiv.appendChild(mainDiv);
-        document.getElementById("inputForm").style.display = "none";
-
-        let artistForm1 = document.getElementById("name");
-        let artistForm2 = document.getElementById("info");
-        let artistForm3 = document.getElementById("img");
-
-        artistForm1.value = ""
-        artistForm2.value = ""
-        artistForm3.value = ""
-
-    }
-
-    function deleteArtist(id) {
-        var parent = document.getElementById(id).parentNode;
-        parent.remove();
-    }
-    
-
-</script>
 </html>
